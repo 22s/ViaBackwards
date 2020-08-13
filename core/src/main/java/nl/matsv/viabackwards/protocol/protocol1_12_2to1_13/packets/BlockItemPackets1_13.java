@@ -246,9 +246,9 @@ public class BlockItemPackets1_13 extends nl.matsv.viabackwards.api.rewriters.It
                             int chunkZ = wrapper.get(Type.INT, 1);
                             int block = record.getBlockId();
                             Position position = new Position(
-                                    (record.getHorizontal() >> 4 & 15) + (chunkX * 16),
+                                    record.getSectionX() + (chunkX * 16),
                                     record.getY(),
-                                    (record.getHorizontal() & 15) + (chunkZ * 16));
+                                    record.getSectionZ() + (chunkZ * 16));
 
                             // Store if needed
                             storage.checkAndStore(position, block);
@@ -592,8 +592,8 @@ public class BlockItemPackets1_13 extends nl.matsv.viabackwards.api.rewriters.It
             if (display != null) {
                 StringTag name = display.get("Name");
                 if (name instanceof StringTag) {
-                    StringTag via = display.remove(extraNbtTag + "|Name");
-                    name.setValue(via != null ? via.getValue() : ChatRewriter.jsonTextToLegacy(name.getValue()));
+                    display.put(new StringTag(extraNbtTag + "|Name", name.getValue()));
+                    name.setValue(ChatRewriter.jsonTextToLegacy(name.getValue()));
                 }
             }
 
@@ -788,8 +788,8 @@ public class BlockItemPackets1_13 extends nl.matsv.viabackwards.api.rewriters.It
                 CompoundTag displayTag = (CompoundTag) display;
                 StringTag name = displayTag.get("Name");
                 if (name instanceof StringTag) {
-                    displayTag.put(new StringTag(extraNbtTag + "|Name", name.getValue()));
-                    name.setValue(ChatRewriter.legacyTextToJson(name.getValue()).toString());
+                    StringTag via = displayTag.remove(extraNbtTag + "|Name");
+                    name.setValue(via != null ? via.getValue() : ChatRewriter.legacyTextToJson(name.getValue()).toString());
                 }
             }
 
