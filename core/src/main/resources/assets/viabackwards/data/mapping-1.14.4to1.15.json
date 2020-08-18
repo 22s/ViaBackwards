@@ -35,7 +35,7 @@
     "minecraft:honey_block": "minecraft:slime_block",
     "minecraft:honeycomb_block": "minecraft:horn_coral_block",
     "minecraft:beehive": "minecraft:barrel[facing=up,open=false]",
-    "minecraft:bee_nest": "minecraft:yellow_shulker_box[facing=up]"
+    "minecraft:bee_nest": "minecraft:yellow_concrete"
   },
   "items": {
     "minecraft:honey_bottle": {
@@ -51,7 +51,7 @@
       "name": "1.15 Honeycomb Block"
     },
     "minecraft:bee_nest": {
-      "id": "minecraft:yellow_shulker_box",
+      "id": "minecraft:yellow_concrete",
       "name": "1.15 Bee Nest"
     },
     "minecraft:beehive": {
