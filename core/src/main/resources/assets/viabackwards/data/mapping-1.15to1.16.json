@@ -5581,7 +5581,7 @@
     "minecraft:warped_sign": "minecraft:dark_oak_sign[",
     "minecraft:crimson_wall_sign": "minecraft:acacia_wall_sign[",
     "minecraft:warped_wall_sign": "minecraft:dark_oak_wall_sign[",
-    "minecraft:netherite_block": "minecraft:obsidian",
+    "minecraft:netherite_block": "minecraft:black_concrete",
     "minecraft:ancient_debris": "minecraft:obsidian",
     "minecraft:crying_obsidian": "minecraft:obsidian",
     "minecraft:target[power=0]": "minecraft:hay_block[axis=y]",
@@ -5848,7 +5848,7 @@
       "name": "1.16 Shroomlight"
     },
     "minecraft:netherite_block": {
-      "id": "minecraft:coal_block",
+      "id": "minecraft:black_concrete",
       "name": "1.16 Netherite Block"
     },
     "minecraft:ancient_debris": {
